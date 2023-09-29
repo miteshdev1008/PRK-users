@@ -1,0 +1,753 @@
+{
+	"info": {
+		"_postman_id": "f3d34723-2cca-4de2-bac8-245ebfeefdf2",
+		"name": "prisma",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23782105",
+		"_collection_link": "https://lively-zodiac-892961.postman.co/workspace/Team-Workspace~8431c9ae-ce65-4d3e-8013-b635b35d0a0f/collection/23782105-f3d34723-2cca-4de2-bac8-245ebfeefdf2?action=share&source=collection_link&creator=23782105"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "msds@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "abc@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateuser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "Msd@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/updateuser",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"updateuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteuser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}/deleteuser",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deleteuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getalluser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/allusers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"allusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find user by email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk0NDk3NDI5fQ.2ha2FMPdoShucgnG6d_LhAS1d26JiNs9uhqUSNSIXzo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}/search-user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"search-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myprofile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk0NTIyNDMyfQ.kzPUL03k3sr7E80FXyK_O_gYG7iWABDIlnw-RJ9vzE8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "192.168.0.131:8080/logout",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"131"
+							],
+							"port": "8080",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteuser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "192.168.0.131:8080/delete-user-by-id",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"131"
+							],
+							"port": "8080",
+							"path": [
+								"delete-user-by-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "blockuser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "192.168.0.131:8080/block-user",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"131"
+							],
+							"port": "8080",
+							"path": [
+								"block-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unblock user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "making the post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/home/siddharth/Pictures/Screenshot from 2023-08-11 10-45-29.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/post/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"post",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allposts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/allpost",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"allpost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "likepost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "post_id",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/likepost/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"likepost",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete the post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/deletepost/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deletepost",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find my post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk0NDk3NDI5fQ.2ha2FMPdoShucgnG6d_LhAS1d26JiNs9uhqUSNSIXzo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/my-posts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"my-posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete post by admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk1NzAzNzcxfQ.UY-58l7TrilPw3d5yCuuzqqcULYZ756Cy2MYddZyee4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "post_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "192.168.0.131:8080/delete-post-by-id",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"131"
+							],
+							"port": "8080",
+							"path": [
+								"delete-post-by-id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "addcomment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comment/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk0NDE5NTkxfQ.mrAq8_8netebFVhKA2Z8Qi1tjgL-9IQfTsJ8dmZrdx8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/get-all-comment",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"get-all-comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk0NDk3NDI5fQ.2ha2FMPdoShucgnG6d_LhAS1d26JiNs9uhqUSNSIXzo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment_id",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/delete-comment",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"delete-comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk0NDk3NDI5fQ.2ha2FMPdoShucgnG6d_LhAS1d26JiNs9uhqUSNSIXzo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/edit-comment",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"edit-comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete  comment by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "delete-comment-id",
+							"host": [
+								"delete-comment-id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "story",
+			"item": [
+				{
+					"name": "addstory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk1MDQyNDE5fQ.mXX0TjBZUZ40hHZwUjwW62eI9tz7rFfzoWiwYqLaWqU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/siddharth/Pictures/Screenshot from 2023-08-11 18-32-56.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "192.168.0.131:8080/upload-story",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"131"
+							],
+							"port": "8080",
+							"path": [
+								"upload-story"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getmy story",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update story",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk1MTAzMTQ5fQ.QzFWKPVvdBGhSX9P2Qn17BFeUuR9GI3pBXLjMhYi0Hs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "192.168.0.131:8080/update-story",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"131"
+							],
+							"port": "8080",
+							"path": [
+								"update-story"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getstorybyid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk1MjAxOTE5fQ.54jEoZH1MJ7aYNTBJWZCWc8ssGKxj-6Ly9go0olGZQM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "storyid",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "192.168.0.131:8080/get-story-by-id",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"131"
+							],
+							"port": "8080",
+							"path": [
+								"get-story-by-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete story",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user with time",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://192.168.0.131:8080",
+			"type": "string"
+		}
+	]
+}

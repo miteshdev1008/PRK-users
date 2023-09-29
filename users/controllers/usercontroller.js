@@ -21,18 +21,7 @@ console.log("b");
   console.log(otp);
   if (!mobile && !otp) return res.status(417).json({ success: false, message: 'please enter mobileno and otp',data:{}});
 
-  //  const verifyuser=await otpmodel.find({no:mobile});
-  // //  console.log(verifyuser);
-  //  if(!verifyuser.length>0) return res.status(417).json({success:false,message:'this mobile number is not found any match please enter valid mobile number'});
 
-  //    time=verifyuser[0].updatedAt;
-  //   //  console.log(time);
-  //    const checklimit=otpexpires(time);
-  //    console.log("expires"+checklimit);
-  //    if(checklimit==false) return res.status(417).json({success:false,message:'your otp has been expires'});
-  //  console.log(verifyuser[0].otp+" "+otp);
-
-  //  if(verifyuser[0].otp!=otp) return res.status(417).json({success:false,data:'sorry your otp has not been matched'});
 
   const prop = ['city', 'password', 'mobile', 'conformpassword', 'mpin'];
   const empty = [];
@@ -54,17 +43,7 @@ console.log("b");
   if (user.mobile.length != 10) return res.status(417).json({ success: false, status: 417, message: 'please enter 10 digit mobile no',data:{}})
   if (isNaN(user.mobile)) return res.status(417).json({ success: false, status: 417, message: 'please enter digits only in mobileno',data:{}});
 
-  // var userregister = await usermodel.find({ mobile: user.mobile });
-  // if (userregister.length > 0) return res.status(409).json({ success: false, status: 409, message: 'user already register' });
-  // //  console.log("name is "+checkname);
 
- // if (!user.name.length > 0) return res.json({ success: false, message: 'please enter name',data:{}});
-  //const checkname = stringonly(user.name);
-  // console.log(checkname)
-  //if (checkname != true) {
-   // const mesage = checkname + ' only in name'
-    //return res.json({ success: false, message: mesage,dat:{}});
- // }
 
   if (!user.city.length > 0) return res.json({ status: false, message: 'please enter city name',data:{}});
   const checkcity = stringonly(user.city);
@@ -73,7 +52,7 @@ console.log("b");
     return res.json({ success: false, message: mesage,data:{}});
   }
 
-  //  if(user.city) return res.json({status:false,message:'please enter city in characters ojnly'}) 
+ 
   if (!user.password.length > 0) return res.status(417).json({ success: false, message: 'please enter password',data:{}})
   const passc = passcheck(user.password);
 
@@ -87,7 +66,7 @@ console.log("b");
   //saving user 
   const newuser = new usermodel({ name: user.name, password: user.password, mobile: user.mobile, city: user.city, mpin: user.mpin });
   var usersave = await newuser.save();
-  //  console.log(usersave);
+
   if (usersave) {
     const token = await createtoken(usersave._id);
     console.log(token)
@@ -108,15 +87,12 @@ const sendotp = asyncerrorhandler(async (req, res) => {
 
   if (phone_no.length != 10) return res.status(417).json({ success: false, message: 'please enter 10 digit number',data:{}});
 
-  // const finduser=await usermodel.find({mobile:no});
-  // res.json(finduser.length);
-
-  // if(finduser.length>0) return res.json({success:false,message:'user already registered'});
+  
   let otp = "";
   for (i = 0; i <= 5; i++) {
     otp += Math.floor(Math.random() * 10);
   }
-  // console.log(otp+no);
+  
   const accountSid = process.env.SMS_KEY_ID;
   const authToken = process.env.SMS_AUTHTOKEN;
   const client = require('twilio')(accountSid, authToken);
@@ -384,12 +360,6 @@ const addaddress = asyncerrorhandler(async (req, res) => {
   const spcae = "please enter field :" + empty.toString();
   // console.log(empty);
   if (empty.length != 0) return res.status(417).json({ success: false, status: 417, message: spcae,data:{}});
-
-  // const latPattern = /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)$/;
-  // const lonPattern = /^[-+]?((1[0-7]\d(\.\d+)?|180(\.0+)?)|(0?\d{1,2}(\.\d+)?))$/;
-
-  // console.log(latPattern.test(req.body.lang)!=true&&lonPattern.test(req.body.lat)!=true)
-  // if(lonPattern.test(req.body.lang)!=true&&latPattern.test(req.body.lat)!=true) return res.status(417).json({success:false,message:'please enter valid lattitude and longitude'})
 
   if (!req.body.address || req.body.address.length <= 0) return res.status(417).json({ success: false, message: 'please enter address',data:{}})
   // console.log(req.body.title.length<=0)
